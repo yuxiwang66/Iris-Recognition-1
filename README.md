@@ -73,7 +73,7 @@ V.MATLAB implementation
   <img src="pics/1.matlab-gui.png" alt="Drawing" style="width: 500px;"/>
 </p>
 
-V.1.Enrollment:
+V.1.Enrollment
 ---------------
 * Select button `Image select...`, a select browser will appear for you to select an eye image for enrollment.
 
@@ -95,7 +95,7 @@ V.1.Enrollment:
 
 * At this time, I haven't develop a feature to reject accounts that exist in the database. In the future, I will fill into this blank.
 
-V.2.Verification:
+V.2.Verification
 -----------------
 * To verify an eye image to see who is is, click button `Image select...` to select an image as instructions in the `Enrollment` section.
 * Click button `Verify`. Then, a message notify the verification state. In addition, information about the matched account will be shown as the following picture.
@@ -104,7 +104,7 @@ V.2.Verification:
   <img src="pics/5.verify.png" alt="Drawing" style="width: 500px;"/>
 </p>
 
-V.3.Account infomation view:
+V.3.Account infomation view
 ----------------------------
 * Click button `View account...` to select the template file that you hope to see its content. The result will be same as the picture below.
 
