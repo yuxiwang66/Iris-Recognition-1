@@ -20,9 +20,9 @@ from path import image_database_path, temp_database_path
 ##  Execution
 ##-----------------------------------------------------------------------------
 # Prepare
-id = 19
+id = 20
 group = 2
-temp = 3
+temp = 4
 filename = '%s%.3d_%d_%d.jpg' % (image_database_path ,id, group, temp)
 
 
@@ -33,7 +33,7 @@ template, mask, filename = extractFeature(filename)
 
 
 # Matching
-id_acc = matching(template, mask, 0.38)
+id_acc = matching(template, mask, 0.42)
 
 if id_acc == -1:
 	print('>>> Error!')

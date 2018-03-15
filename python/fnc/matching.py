@@ -50,6 +50,7 @@ def matching(template_extr, mask_extr, threshold):
 	# Threshold and give the result ID
 	hm_dist = np.array(hm_dist)
 	id_acc = np.where(hm_dist <= threshold)		# default=0.38
+	print(id_acc)
 	if len(id_acc[0]) < 1:
 		id_acc = 0
 		return id_acc
