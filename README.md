@@ -40,6 +40,20 @@ III.Prerequisites
 
 IV.Folder structure
 ===================
+.
++-- CASIA-database
+|   +-- 001_1_1.jpg
+|   +-- ...
+|   +-- 108_2_4.jpg
+|
++-- matlab
+|   +-- fnc
+|       +-- addcircle.m
+|       +-- ...
+|   +-- template-database
+|       +-- 1.mat
+|       +-- ...
+|   +-- Iris-Recognition-GUI.mlapp
 
 
 V.MATLAB implementation
