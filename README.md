@@ -40,20 +40,26 @@ III.Prerequisites
 
 IV.Folder structure
 ===================
+<!-- AUTO-GENERATED-CONTENT:START (DIRTREE:dir=./&depth=1) -->
+```
 .
-+-- CASIA-database
++-- CASIA-database/
 |   +-- 001_1_1.jpg
 |   +-- ...
 |   +-- 108_2_4.jpg
 |
-+-- matlab
-|   +-- fnc
++-- matlab/
+|   +-- fnc/
 |       +-- addcircle.m
 |       +-- ...
-|   +-- template-database
+|   +-- template-database/
 |       +-- 1.mat
 |       +-- ...
 |   +-- Iris-Recognition-GUI.mlapp
+```
+<!-- AUTO-GENERATED-CONTENT:END -->
+* Folder [CASIA-database] includes original eye images. My system will use images in this folder as the input.
+* Folder [matlab] is the implementation on Matlab language. In which, folder [fnc] contains back-end functions for the GUI. Folder [template-database] stores registered template extracted from eye images. File [Iris-Recognition-GUI.mlapp] is the GUI configuration for my system.
 
 
 V.MATLAB implementation
