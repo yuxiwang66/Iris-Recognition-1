@@ -13,9 +13,9 @@ Table of contents
 - [III.Prerequisites](#iiiprerequisites)
 - [IV.Folder structure](#ivfolder-structure)
 - [V.MATLAB implementation](#vmatlab-implementation)
-  * [V.1.Enrollment:](#v1enrollment-)
-  * [V.2.Verification:](#v2verification-)
-  * [V.3.Account infomation view:](#v3account-infomation-view-)
+  * [V.1.Enrollment](#v1enrollment)
+  * [V.2.Verification](#v2verification)
+  * [V.3.Account infomation view](#v3account-infomation-view)
 - [VI.Python implementation](#vipython-implementation)
 
 
