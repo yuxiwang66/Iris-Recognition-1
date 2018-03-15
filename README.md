@@ -55,11 +55,11 @@ IV.Folder structure
 |   +-- template-database/
 |       +-- 1.mat
 |       +-- ...
-|   +-- Iris-Recognition-GUI.mlapp
+|   +-- IrisRecognitionGUI.mlapp
 ```
 <!-- AUTO-GENERATED-CONTENT:END -->
 * Folder `CASIA-database` includes original eye images. My system will use images in this folder as the input.
-* Folder `matlab` is the implementation on Matlab language. In which, folder `fnc` contains back-end functions for the GUI. Folder `template-database` stores registered template extracted from eye images. File `Iris-Recognition-GUI.mlapp` is the GUI configuration for my system.
+* Folder `matlab` is the implementation on Matlab language. In which, folder `fnc` contains back-end functions for the GUI. Folder `template-database` stores registered template extracted from eye images. File `IrisRecognitionGUI.mlapp` is the GUI configuration for my system.
 
 
 V.MATLAB implementation
