@@ -13,8 +13,10 @@ Table of contents
 - [III.Prerequisites](#iiiprerequisites)
 - [IV.Folder structure](#ivfolder-structure)
 - [V.MATLAB implementation](#vmatlab-implementation)
+  * [V.1.Enrollment:](#v1enrollment-)
+  * [V.2.Verification:](#v2verification-)
+  * [V.3.Account infomation view:](#v3account-infomation-view-)
 - [VI.Python implementation](#vipython-implementation)
-- [VII.Result](#viiresult)
 
 
 I.Introduction
@@ -114,18 +116,3 @@ V.3.Account infomation view:
 VI.Python implementation
 ========================
 
-
-VII.Result
-==========
-Hardware board:
-<img src="pictures/Hardware-board.jpg" alt="Drawing" style="width: 700px;"/>
-
-Hardware board connected to home electric network:
-<img src="pictures/Connect-to-electric-network.jpg" alt="Drawing" style="width: 700px;"/>
-
-Mode test (Test handy and automatic modes):  
-https://youtu.be/6kZmtNLPiIU
-
-Alarm tests (On and Off alarm):  
-https://youtu.be/Bq2uVIg-Ajc  
-https://youtu.be/PRSb5gKpI5M  
