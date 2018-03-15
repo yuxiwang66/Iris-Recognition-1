@@ -12,34 +12,28 @@
 ##-----------------------------------------------------------------------------
 from fnc.extractFeature import extractFeature
 from fnc.matching import matching
-
 from time import time
-from sys import argv
+from path import image_database_path, temp_database_path
 
 
 ##-----------------------------------------------------------------------------
 ##  Execution
 ##-----------------------------------------------------------------------------
-# Parse argument
-start = time()
-
-filename = ''
-if len(argv) == 2:
-	filename = argv[1]
-elif len(argv) == 1:
-	id = 19
-	group = 1
-	temp = 3
-	filename = 'im_db/%.3d_%d_%d' % (id, group, temp)
+# Prepare
+id = 19
+group = 2
+temp = 3
+filename = '%s%.3d_%d_%d.jpg' % (image_database_path ,id, group, temp)
 
 
 # Extract feature
+start = time()
 print('>>> Start verifying {}...'.format(filename))
 template, mask, filename = extractFeature(filename)
 
 
 # Matching
-id_acc = matching(template, mask, 0.40)
+id_acc = matching(template, mask, 0.38)
 
 if id_acc == -1:
 	print('>>> Error!')

@@ -17,6 +17,7 @@ from fnmatch import filter
 import scipy.io as sio
 from multiprocessing import Pool
 from itertools import repeat
+from path import temp_database_path
 
 
 ##-----------------------------------------------------------------------------
@@ -36,7 +37,7 @@ def matching(template_extr, mask_extr, threshold):
 		id_acc			- ID of the matched account, 0 if not, -1 if error.
 	"""
 	# Get the number of accounts in the database
-	numfile = len(filter(listdir('acc_db/'), '*.mat'))
+	numfile = len(filter(listdir(temp_database_path), '*.mat'))
 	if numfile == 0:
 		id_acc = -1
 		return id_acc
@@ -157,7 +158,7 @@ def matchingPool(id, template_extr, mask_extr):
 		hm_dist			- Hamming distance
 	"""
 	# Load each account
-	data_template = sio.loadmat('acc_db/{}.mat'.format(str(id+1)))
+	data_template = sio.loadmat('%s{}.mat'.format(str(id+1)) % temp_database_path)
 	template = data_template['template']
 	mask = data_template['mask']
 

@@ -11,7 +11,7 @@
 ##  Import
 ##-----------------------------------------------------------------------------
 from fnc.extractFeature import extractFeature
-
+from path import image_database_path, temp_database_path
 from time import time
 import scipy.io as sio
 
@@ -20,7 +20,7 @@ import scipy.io as sio
 ##  Function
 ##-----------------------------------------------------------------------------
 def getIDFile(filename):
-    id = filename[6:9]
+    id = filename[-11:-8]
     id = int(id)
     id = str(id)
     return id
@@ -30,13 +30,12 @@ def getIDFile(filename):
 ##  Execution
 ##-----------------------------------------------------------------------------
 start = time()
-
 for i in range(108):
-    template, mask, filename = extractFeature('im_db/%.3d_%d_%d' % (i+1, 1, 1))
-    sio.savemat('acc_db/{}.mat'.format(getIDFile(filename)), 
+    template, mask, filename = extractFeature('%s%.3d_%d_%d.jpg' 	\
+    									% (image_database_path ,i+1, 1, 1))
+    sio.savemat('%s{}.mat'.format(getIDFile(filename)) % temp_database_path, 
                 mdict={'template': template, 'mask': mask})
     print(filename)
-
 end = time()
 print('\n>>> Enrollment time: {} [s]\n'.format(end-start))
 

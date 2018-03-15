@@ -11,7 +11,7 @@
 ##  Import
 ##-----------------------------------------------------------------------------
 from fnc.extractFeature import extractFeature
-
+from path import image_database_path, temp_database_path
 from matplotlib import pyplot as plt
 from time import time
 import scipy.io as sio
@@ -31,7 +31,7 @@ def getIDFile(filename):
     Output:
         id	        - The ID string corresponding to the file nam.
     """
-    id = filename[6:9]
+    id = filename[-11:-8]
     id = int(id)
     id = str(id)
     return id
@@ -42,7 +42,7 @@ def getIDFile(filename):
 ##-----------------------------------------------------------------------------
 # Extract feature
 start = time()
-filename = 'im_db/037_1_1'
+filename = '%s/019_1_1.jpg' % image_database_path
 template, mask, filename = extractFeature(filename)
 end = time()
 print('\n>>> Enrollment time: {} [s]\n'.format(end-start))
@@ -55,6 +55,6 @@ plt.show()
 
 
 # Save
-sio.savemat('acc_db/{}.mat'.format(getIDFile(filename)),
+sio.savemat('%s{}.mat'.format(getIDFile(filename)) % temp_database_path,
             mdict={'template':template, 'mask':mask})
 
