@@ -14,10 +14,16 @@
 %
 % Returns:   h - Updated accumulator array.
 
-% Peter Kovesi
+% Author: 
+% Peter Kovesi   
 % Department of Computer Science & Software Engineering
 % The University of Western Australia
-% April 2002
+% pk@cs.uwa.edu.au  www.cs.uwa.edu.au/~pk
+%
+% April 1999    Original version
+% January 2003  Error in calculation of d2 corrected
+% March 2003    Modified to accept scaling factor and vertical/horizontal
+%               gradient bias (Libor Masek)
 
 function h = addcircle(h, c, radius, weight)
 

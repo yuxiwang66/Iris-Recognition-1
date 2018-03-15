@@ -9,11 +9,16 @@
 %                     regions, values > 1 enhance contrast in dark
 %                     regions. 
 
-% Author: Peter Kovesi
+% Author: 
+% Peter Kovesi   
 % Department of Computer Science & Software Engineering
 % The University of Western Australia
-% pk@cs.uwa.edu.au     www.cs.uwa.edu.au/~pk
-% July 2001
+% pk@cs.uwa.edu.au  www.cs.uwa.edu.au/~pk
+%
+% April 1999    Original version
+% January 2003  Error in calculation of d2 corrected
+% March 2003    Modified to accept scaling factor and vertical/horizontal
+%               gradient bias (Libor Masek)
 
 function newim = adjgamma(im, g)
 
