@@ -19,7 +19,7 @@ Table of contents
 
 I.Introduction
 ==============
-* In the last summer 2017, I met my teacher in the course Digital Signal Processing. He recommended me Biometrics topic. Since there, I have started exploring about Biometrics, such as Fingerprint, Iris, Face.
+* In the last summer 2017, I met my teacher in the course Digital Signal Processing. He recommended me Biometrics topic. Since there, I have started exploring about Biometrics, such as Fingerprint, Iris, and Face.
 * I searched on the Internet and found out an open-source Iris Recognition model, which written on Matlab. Thanks to the author of this open-source code, I can build up my own system. [Here is information about the author](http://www.peterkovesi.com/studentprojects/libor/sourcecode.html):\
 ``
 Libor Masek, Peter Kovesi. MATLAB Source Code for a Biometric Identification System Based on Iris Patterns. The School of Computer Science and Software Engineering, The University of Western Australia. 2003.
@@ -58,8 +58,8 @@ IV.Folder structure
 |   +-- Iris-Recognition-GUI.mlapp
 ```
 <!-- AUTO-GENERATED-CONTENT:END -->
-* Folder [CASIA-database] includes original eye images. My system will use images in this folder as the input.
-* Folder [matlab] is the implementation on Matlab language. In which, folder [fnc] contains back-end functions for the GUI. Folder [template-database] stores registered template extracted from eye images. File [Iris-Recognition-GUI.mlapp] is the GUI configuration for my system.
+* Folder `CASIA-database` includes original eye images. My system will use images in this folder as the input.
+* Folder `matlab` is the implementation on Matlab language. In which, folder `fnc` contains back-end functions for the GUI. Folder `template-database` stores registered template extracted from eye images. File `Iris-Recognition-GUI.mlapp` is the GUI configuration for my system.
 
 
 V.MATLAB implementation
