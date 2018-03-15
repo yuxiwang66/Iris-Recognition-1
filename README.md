@@ -33,7 +33,7 @@ Libor Masek, Peter Kovesi. MATLAB Source Code for a Biometric Identification Sys
 
 II.Description
 ==============
-* I notice that this system is not a real-world application. Clearly, a complete system must have a specific camera to capture iris inside eyes. However, these ones are extremely expensive. Therefore, I will use an available image database on the Internet, called [CASIA-IrisV1](http://biometrics.idealtest.org/dbDetailForUser.do?id=1), to replace the costly camera. All testing experiment is carried out using images in this database.
+* I notice that this system is not a real-world application. Clearly, a complete system must have a specific camera to capture iris inside eyes. However, these ones are extremely expensive. Therefore, I will use an available image database on the Internet, called [CASIA-IrisV1](http://biometrics.idealtest.org/dbDetailForUser.do?id=1), to replace the costly camera. All testing experiments are carried out using images in this database.
 * Typically, a recognition system witnesses two operation modes, namely Enrollment and Verification. The former is extracting features from an eye image and save it into a template database. While the latter allows users extract their features and match with existing entities in the template database to identity the origination of the input image, who it belongs to.
 * Finally, Matlab version is equiped a familiar GUI for convenient use, whereas, Python version is utilized hardware for boosting the computation time.
 
