@@ -157,11 +157,25 @@ workon cv
 ```
 python3 enroll-all.py
 ```
+
+<p align="center">
+  <img src="pics/7.enroll-all.png" alt="Drawing" style="width: 500px;"/>
+</p>
+
 * To register a specific person:
 ```
 python3 enroll-single.py 099_1_3.jpg
 ```
+
+<p align="center">
+  <img src="pics/8.enroll-single.png" alt="Drawing" style="width: 500px;"/>
+</p>
+
 * To verify a specific person:
 ```
 python3 verify.py 008_2_2.jpg
 ```
+
+<p align="center">
+  <img src="pics/9.verify.png" alt="Drawing" style="width: 500px;"/>
+</p>
