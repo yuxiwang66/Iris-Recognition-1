@@ -43,14 +43,21 @@ def matching(template_extr, mask_extr, threshold):
 		return id_acc
 
 	# Parallel computation: Calculate the Hamming distance
-	args = zip(range(numfile), repeat(template_extr), repeat(mask_extr))
+	args = zip(listdir(temp_database_path), repeat(template_extr), repeat(mask_extr))
 	with Pool(processes=4) as pool:
-		hm_dist = pool.starmap(matchingPool, args)
+		hm_dist_list = pool.starmap(matchingPool, args)
+
+	# Post-procedure
+	hm_dist = []
+	filename = []
+	for i in range(len(hm_dist_list)):
+		ele = hm_dist_list[i]
+		filename.append(ele[0])
+		hm_dist.append(ele[1])
 
 	# Threshold and give the result ID
 	hm_dist = np.array(hm_dist)
 	id_acc = np.where(hm_dist <= threshold)		# default=0.38
-	print(id_acc)
 	if len(id_acc[0]) < 1:
 		id_acc = 0
 		return id_acc
@@ -59,7 +66,7 @@ def matching(template_extr, mask_extr, threshold):
 		return id_acc
 
 	# Return
-	return id_acc[0][0]+1
+	return int(filename[id_acc[0][0]][:-4])
 
 
 #------------------------------------------------------------------------------
@@ -145,13 +152,13 @@ def shiftbits(template, noshifts):
 
 
 #------------------------------------------------------------------------------
-def matchingPool(id, template_extr, mask_extr):
+def matchingPool(file_temp_name, template_extr, mask_extr):
 	"""
 	Description:
 		Perform matching session within a Pool of parallel computation
 
 	Input:
-		id				- ID of the examining template
+		file_temp_name	- File name of the examining template
 		template_extr	- Extracted template
 		mask_extr		- Extracted mask of noise
 
@@ -159,11 +166,11 @@ def matchingPool(id, template_extr, mask_extr):
 		hm_dist			- Hamming distance
 	"""
 	# Load each account
-	data_template = sio.loadmat('%s{}.mat'.format(str(id+1)) % temp_database_path)
+	data_template = sio.loadmat('%s%s'% (temp_database_path, file_temp_name))
 	template = data_template['template']
 	mask = data_template['mask']
 
 	# Calculate the Hamming distance
 	hm_dist = calHammingDist(template_extr, mask_extr, template, mask)
-	return hm_dist
+	return (file_temp_name, hm_dist)
 

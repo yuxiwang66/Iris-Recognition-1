@@ -15,6 +15,8 @@ from path import image_database_path, temp_database_path
 from matplotlib import pyplot as plt
 from time import time
 import scipy.io as sio
+from sys import argv, exit
+from os.path import exists
 
 
 ##-----------------------------------------------------------------------------
@@ -40,12 +42,24 @@ def getIDFile(filename):
 ##-----------------------------------------------------------------------------
 ##  Execution
 ##-----------------------------------------------------------------------------
+# Get the argument
+if len(argv)==2:
+	filename = '%s/%s' % (image_database_path, argv[1])
+	if not exists(filename):
+		print(">>> Wrong file!\n")
+		exit()
+elif len(argv)==1:
+	filename = '%s001_1_1.jpg' % image_database_path
+else:
+	print(">>>Wrong syntax!\n")
+	exit()
+
 # Extract feature
+print('>>> Enroll for the file ', filename)
 start = time()
-filename = '%s/019_1_1.jpg' % image_database_path
 template, mask, filename = extractFeature(filename)
 end = time()
-print('\n>>> Enrollment time: {} [s]\n'.format(end-start))
+print('>>> Enrollment time: {} [s]\n'.format(end-start))
 
 
 # Visualize

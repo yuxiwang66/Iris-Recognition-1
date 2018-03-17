@@ -13,22 +13,30 @@
 from fnc.extractFeature import extractFeature
 from fnc.matching import matching
 from time import time
-from path import image_database_path, temp_database_path
+from path import image_database_path
+from sys import argv, exit
+from os.path import exists
 
 
 ##-----------------------------------------------------------------------------
 ##  Execution
 ##-----------------------------------------------------------------------------
-# Prepare
-id = 20
-group = 2
-temp = 4
-filename = '%s%.3d_%d_%d.jpg' % (image_database_path ,id, group, temp)
+# Get the argument
+if len(argv)==2:
+	filename = '%s%s' % (image_database_path, argv[1])
+	if not exists(filename):
+		print(">>> Wrong file!\n")
+		exit()
+elif len(argv)==1:
+	filename = '%s001_1_1.jpg' % image_database_path
+else:
+	print(">>>Wrong syntax!\n")
+	exit()
 
 
 # Extract feature
 start = time()
-print('>>> Start verifying {}...'.format(filename))
+print('>>> Start verifying {}'.format(filename))
 template, mask, filename = extractFeature(filename)
 
 
