@@ -1,16 +1,19 @@
 # Iris Recognition
 
 I build an `Iris-Recognition system`, implemented on both Matlab and Python languages.
-#### Keyword: Iris Recognition, Computer Vision, Image Processing, Daugman
+#### Keyword: Iris Recognition, Biometrics, Computer Vision, Image Processing, Daugman
 
 
 Table of contents
 =================
 - [Iris Recognition](#iris-recognition)
+      - [Keyword: Iris Recognition, Computer Vision, Image Processing, Daugman](#keyword--iris-recognition--computer-vision--image-processing--daugman)
 - [Table of contents](#table-of-contents)
 - [I.Introduction](#iintroduction)
 - [II.Description](#iidescription)
 - [III.Prerequisites](#iiiprerequisites)
+  * [III.1.Matlab](#iii1matlab)
+  * [III.2.Python](#iii2python)
 - [IV.Folder structure](#ivfolder-structure)
 - [V.MATLAB implementation](#vmatlab-implementation)
   * [V.1.Enrollment](#v1enrollment)
@@ -33,14 +36,28 @@ Libor Masek, Peter Kovesi. MATLAB Source Code for a Biometric Identification Sys
 
 II.Description
 ==============
-* I notice that this system is not a real-world application. Clearly, a complete system must have a specific camera to capture iris inside eyes. However, these ones are extremely expensive. Therefore, I will use an available image database on the Internet, called [CASIA-IrisV1](http://biometrics.idealtest.org/dbDetailForUser.do?id=1), to replace the costly camera. All testing experiments are carried out using images in this database.
+* I notice that this system is not a real-world application. Clearly, a complete system must have a specific camera to capture iris inside eyes. However, these ones are extremely expensive. Therefore, I will use an available image database on the Internet, called [CASIA-IrisV1](http://biometrics.idealtest.org/dbDetailForUser.do?id=1), to replace the costly camera. In this database, there are totally 108 people, each person has 7 eye images. All testing experiments are carried out using images in this database.
 * Typically, a recognition system witnesses two operation modes, namely Enrollment and Verification. The former is extracting features from an eye image and save it into a template database. While the latter allows users extract their features and match with existing entities in the template database to identity the origination of the input image, who it belongs to.
-* Finally, Matlab version is equiped a familiar GUI for convenient use, whereas, Python version is utilized hardware for boosting the computation time.
+* Finally, Matlab version is equiped a familiar GUI for convenient use, whereas, Python version is utilized all CPU cores of hardware for boosting the computation time.
 
 
 III.Prerequisites
 =================
+III.1.Matlab
+------------
 * Because I write the GUI using App designer, and only update versions of Matlab (from R2016a) have this feature. Therefore, to be able to run code, your Matlab version must be R0216a or higher.
+
+III.2.Python
+------------
+* The OS, which I'm using, is Ubuntu 16.04. In addition, the Python interpreter is Python 3.5.
+* First, create a virtual environment, named `cv`, and install OpenCV library on `cv` using [this link](https://www.pyimagesearch.com/2016/10/24/ubuntu-16-04-how-to-install-opencv/).
+* Then, install some python packages inside `cv` using pip:
+```
+workon cv
+pip install numpy
+pip install scipy
+pip install scikit-image
+```
 
 
 IV.Folder structure
@@ -61,10 +78,23 @@ IV.Folder structure
 |       +-- 1.mat
 |       +-- ...
 |   +-- IrisRecognitionGUI.mlapp
+|
++-- python/
+|   +-- fnc/
+|       +-- boundary.py
+|       +-- ...
+|   +-- template-database/
+|       +-- 1.mat
+|       +-- ...
+|   +-- path.py
+|   +-- enroll-all.py
+|   +-- enroll-single.py
+|   +-- verify.py
 ```
 <!-- AUTO-GENERATED-CONTENT:END -->
 * Folder `CASIA-database` includes original eye images. My system will use images in this folder as the input.
 * Folder `matlab` is the implementation on Matlab language. In which, folder `fnc` contains back-end functions for the GUI. Folder `template-database` stores registered template extracted from eye images. File `IrisRecognitionGUI.mlapp` is the GUI configuration for my system.
+* Folder `python` is the implemtation on Python language. In which, folder `fnc` contains back-end functions. Folder `template-database` stores registered template extracted from eye images. File `path.py` defines some essential paths. File `enroll-all.py` is responsible for registering 108 accounts. File `enroll-single.py` registers for a person, which is indicated by user. File `verify.py` is used to verify an eye image.
 
 
 V.MATLAB implementation
@@ -118,4 +148,20 @@ V.3.Account infomation view
 
 VI.Python implementation
 ========================
-
+* First, change the current directory into foler `python`. Afterward, activate the virtual environment that has been installed OpenCV. Assume that that virtual environment named `cv`.
+```
+cd python/
+workon cv
+```
+* To register the whole of 108 people in the CASIA database:
+```
+python3 enroll-all.py
+```
+* To register a specific person:
+```
+python3 enroll-single.py 099_1_3.jpg
+```
+* To verify a specific person:
+```
+python3 verify.py 008_2_2.jpg
+```
