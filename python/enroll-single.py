@@ -43,7 +43,7 @@ def getIDFile(filename):
 ##-----------------------------------------------------------------------------
 # Get the argument
 if len(argv)==2:
-	filename = '%s/%s' % (image_database_path, argv[1])
+	filename = '%s%s' % (image_database_path, argv[1])
 	if not exists(filename):
 		print(">>> Wrong file!\n")
 		exit()
