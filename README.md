@@ -7,10 +7,13 @@ I build an `Iris-Recognition system`, implemented on both Matlab and Python lang
 Table of contents
 =================
 - [Iris Recognition](#iris-recognition)
+      - [Keyword: Iris Recognition, Computer Vision, Image Processing, Daugman](#keyword--iris-recognition--computer-vision--image-processing--daugman)
 - [Table of contents](#table-of-contents)
 - [I.Introduction](#iintroduction)
 - [II.Description](#iidescription)
 - [III.Prerequisites](#iiiprerequisites)
+  * [III.1.Matlab](#iii1matlab)
+  * [III.2.Python](#iii2python)
 - [IV.Folder structure](#ivfolder-structure)
 - [V.MATLAB implementation](#vmatlab-implementation)
   * [V.1.Enrollment](#v1enrollment)
@@ -139,7 +142,7 @@ VI.Python implementation
 ========================
 * First, change the current directory into foler `python`. Afterward, activate the virtual environment that has been installed OpenCV. Assume that that virtual environment named `cv`.\
 ``
-cd python/
+cd python/ \
 workon cv
 ``
 * To register the whole of 108 people in the CASIA database:\
