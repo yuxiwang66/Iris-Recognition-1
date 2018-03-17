@@ -49,7 +49,15 @@ III.1.Matlab
 
 III.2.Python
 ------------
-* asd.
+* The OS, which I'm using, is Ubuntu 16.04. In addition, the Python interpreter is Python 3.5.
+* First, create a virtual environment, named `cv`, and install OpenCV library on `cv` using [this link](https://www.pyimagesearch.com/2016/10/24/ubuntu-16-04-how-to-install-opencv/).
+* Then, install some python packages inside `cv` using pip:
+```
+workon cv
+pip install numpy
+pip install scipy
+pip install scikit-image
+```
 
 
 IV.Folder structure
