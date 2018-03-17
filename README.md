@@ -142,7 +142,8 @@ VI.Python implementation
 ========================
 * First, change the current directory into foler `python`. Afterward, activate the virtual environment that has been installed OpenCV. Assume that that virtual environment named `cv`.\
 ``
-cd python/ \
+cd python/
+
 workon cv
 ``
 * To register the whole of 108 people in the CASIA database:\
