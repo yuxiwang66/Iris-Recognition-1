@@ -12,7 +12,6 @@
 ##-----------------------------------------------------------------------------
 from fnc.extractFeature import extractFeature
 from path import image_database_path, temp_database_path
-from matplotlib import pyplot as plt
 from time import time
 import scipy.io as sio
 from sys import argv, exit
@@ -60,12 +59,6 @@ start = time()
 template, mask, filename = extractFeature(filename)
 end = time()
 print('>>> Enrollment time: {} [s]\n'.format(end-start))
-
-
-# Visualize
-plt.figure(1)
-plt.imshow(template, cmap='gray', interpolation='bicubic')
-plt.show()
 
 
 # Save

@@ -1,6 +1,6 @@
 ##-----------------------------------------------------------------------------
 ##  Author      : Chinh-Thuy Nguyen
-##  Date        : Nov 24, 2017
+##  Date        : Mar 15, 2018
 ##
 ##  Interpreter : Python 3.5
 ##  Description	: Define essential paths of the project.
